@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Joc del penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Penjat.js"></script>
+        <link rel="stylesheet" href="Penjat.css">
+    </head>
+    <body onload="Amagar()" style="background-image: url('img/fondo1.png');
+            background-size: 640px 480px; background-repeat: no-repeat;">
+        <h1>Prototip Joc del Penjat</h1>
+        <input id="lletra" placeholder="Escriu una lletra minúscula">
+        <button onclick="Verificar()">Comprovar</button>
+        <h2>Paraula</h2>
+        <div>_ _ _ _ _ _ _</div>
+        <h2>Vides</h2>
+        <div id="vides">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</div>
+        <h2>Lletres</h2>
+        <div id="lletres">_ _ _ _ _ _ _ </div>
+        <br><br><br>
+        <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat/"> El joc del penjat on Scratch <a> 
+        <br>        
+        <button onclick="fons()">Fons bàsic</button>
+        <button onclick="castell()">Castell</button>
+        <button onclick="desert()">Desert</button>
+        <button onclick="festa()">Festa</button>
+        <div id="imatges">
+        <img src="img/ahorcado_0.png" alt="" id="penjat0" width="280" height="270">
+        <img src="img/ahorcado_1.png" alt="" id="penjat1" width="280" height="270">
+        <img src="img/ahorcado_2.png" alt="" id="penjat2" width="280" height="270">
+        <img src="img/ahorcado_3.png" alt="" id="penjat3" width="280" height="270">
+        <img src="img/ahorcado_4.png" alt="" id="penjat4" width="280" height="270">
+        <img src="img/ahorcado_5.png" alt="" id="penjat5" width="280" height="270">
+        <img src="img/ahorcado_6.png" alt="" id="penjat6" width="280" height="270">
+        <img src="img/disfraz1.png" alt="" id="disfressa1" width="280" height="270">
+        <img src="img/disfraz2.png" alt="" id="disfressa2" width="280" height="270">
+        </div>
+</html>
