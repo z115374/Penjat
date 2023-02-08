@@ -1,18 +1,22 @@
             var vides = 7;
             var Lletres = " ";
-
+        
+        
         function Verificar(){
-            var lletra = document.getElementById("lletra").value;            
-            if (vides == 0){
-            document.getElementById("penjat0").hidden = false;
-            document.getElementById("penjat1").hidden=true;
-                alert("Has perdut!");
-            }
-            else if (lletra >= "m"){
+            
+            var lletra = document.getElementById("lletra").value;           
+           }
+            if (lletra >= "m"){
             /*la ç hauria de ser correcta peró al tenir un nombre més alt al codi 
             ASCII es incorrecte */  
                 alert("Has fallat!");              
                 vides = vides -1;
+                if (vides === 0){
+                    document.getElementById("penjat0").hidden = false;
+                    document.getElementById("penjat1").hidden=true;
+                    alert("Has perdut!");
+                    AturaTot();
+                    }
                 Lletres = Lletres + lletra +" ";
                 document.getElementById("lletres").innerHTML = Lletres;
                 switch (vides) {
@@ -39,14 +43,23 @@
                         document.getElementById("penjat1").hidden = false;    
                         document.getElementById("penjat2").hidden = true;
                         break;
+                    case 0:
+                        document.getElementById("penjat0").hidden= false;
+                        document.getElementById("penjat1").hidden = true;
                 }
             } else {
                 alert("Has encertat");               
             }
             document.getElementById("vides").innerHTML ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
-        
-        
+        function AturaTot() {
+            document.getElementById("lletra").disabled = true;
+            document.getElementById("boto").disabled = true;
+            document.getElementById("botofons").disabled = true;
+            document.getElementById("botocastell").disabled = true;
+            document.getElementById("botodesert").disabled = true;
+            document.getElementById("botofesta").disabled = true;
+        }
         function Amagar(){
             document.getElementById("penjat0").hidden = true;
             document.getElementById("penjat1").hidden = true;

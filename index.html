@@ -7,11 +7,11 @@
         <script src="Penjat.js"></script>
         <link rel="stylesheet" href="Penjat.css">
     </head>
-    <body onload="Amagar()" style="background-image: url('img/fondo1.png');
+    <body onload="Amagar()" style="background-image: url('img/fondo1.png'); 
             background-size: 640px 480px; background-repeat: no-repeat;">
         <h1>Prototip Joc del Penjat</h1>
         <input id="lletra" placeholder="Escriu una lletra minúscula">
-        <button onclick="Verificar()">Comprovar</button>
+        <button onclick="Verificar()" id="boto">Comprovar</button>
         <h2>Paraula</h2>
         <div>_ _ _ _ _ _ _</div>
         <h2>Vides</h2>
@@ -21,10 +21,10 @@
         <br><br><br>
         <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat/"> El joc del penjat on Scratch <a> 
         <br>        
-        <button onclick="fons()">Fons bàsic</button>
-        <button onclick="castell()">Castell</button>
-        <button onclick="desert()">Desert</button>
-        <button onclick="festa()">Festa</button>
+        <button onclick="fons()" id="botofons">Fons bàsic</button>
+        <button onclick="castell()" id="botocastell">Castell</button>
+        <button onclick="desert()" id="botodesert">Desert</button>
+        <button onclick="festa()" id="botofesta">Festa</button>
         <div id="imatges">
         <img src="img/ahorcado_0.png" alt="" id="penjat0" width="280" height="270">
         <img src="img/ahorcado_1.png" alt="" id="penjat1" width="280" height="270">
@@ -35,5 +35,15 @@
         <img src="img/ahorcado_6.png" alt="" id="penjat6" width="280" height="270">
         <img src="img/disfraz1.png" alt="" id="disfressa1" width="280" height="270">
         <img src="img/disfraz2.png" alt="" id="disfressa2" width="280" height="270">
+        </div>
+        <div>
+        <audio id="belltoll"><source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
+        <audio id="belltollx3"><source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+        <audio id="boom"><source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+        <audio id="catfight"><source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        <audio id="cheer"><source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+        <audio id="clock"><source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+        <audio id="miau"><source src="aud/miau.mp3" type="audio/mpeg"></audio>
+        <audio id="mystery"><source src="aud/mystery.mp3" type="audio/mpeg"></audio>    
         </div>
 </html>
