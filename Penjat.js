@@ -5,7 +5,30 @@
         function Verificar(){
             
             var lletra = document.getElementById("lletra").value;           
-           
+            lletra = lletra.toLowerCase(); 
+            switch (lletra){
+                case "à":
+                case "á":
+                    lletra = "a";
+                    break;
+                case "é":
+                case "è":
+                    lletra = "e";
+                    break;
+                case "í":
+                case "ì":
+                case "ï":
+                    lletra = "i";
+                    break;
+                case "ó":
+                case "ò":
+                    lletra = "o";
+                    break;
+                case "ú":
+                case "ü":
+                    lletra = "u";
+                    break;
+                }
             if (lletra >= "m"){
             /*la ç hauria de ser correcta peró al tenir un nombre més alt al codi 
             ASCII es incorrecte */  
