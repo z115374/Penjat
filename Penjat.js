@@ -5,7 +5,7 @@
         function Verificar(){
             
             var lletra = document.getElementById("lletra").value;           
-           }
+           
             if (lletra >= "m"){
             /*la ç hauria de ser correcta peró al tenir un nombre més alt al codi 
             ASCII es incorrecte */  
@@ -13,7 +13,7 @@
                 vides = vides -1;
                 if (vides === 0){
                     document.getElementById("penjat0").hidden = false;
-                    document.getElementById("penjat1").hidden=true;
+                    document.getElementById("penjat1").hidden = true;
                     alert("Has perdut!");
                     AturaTot();
                     }
