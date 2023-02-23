@@ -1,7 +1,8 @@
+            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
             var vides = 7;
             var Lletres = " ";
-        
-        
+            var paraula = paraules[Math.floor(Math.random() * paraules.length)];
+            
         function Verificar(){
             
             var lletra = document.getElementById("lletra").value;           
@@ -15,8 +16,7 @@
                 case "è":
                     lletra = "e";
                     break;
-                case "í":
-                case "ì":
+                case "í":              
                 case "ï":
                     lletra = "i";
                     break;
@@ -29,7 +29,8 @@
                     lletra = "u";
                     break;
                 }
-            if (lletra >= "m"){
+            var pos = paraula.indexOf(lletra);
+            if (pos === -1){
             /*la ç hauria de ser correcta peró al tenir un nombre més alt al codi 
             ASCII es incorrecte */  
                 alert("Has fallat!");              
@@ -40,7 +41,7 @@
                     alert("Has perdut!");
                     AturaTot();
                     }
-                Lletres = Lletres + lletra +" ";
+                Lletres = Lletres + lletra + " ";
                 document.getElementById("lletres").innerHTML = Lletres;
                 switch (vides) {
                     case 6:
@@ -71,7 +72,8 @@
                         document.getElementById("penjat1").hidden = true;
                 }
             } else {
-                alert("Has encertat");               
+                alert("Has encertat");
+                document.getElementById("miau").play();
             }
             document.getElementById("vides").innerHTML ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
