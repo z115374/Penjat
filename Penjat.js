@@ -1,7 +1,7 @@
        
-           var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
+            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
             var vides = 7;
-            var Lletres = " ";
+            var Lletres = ["_","_","_","_","_","_","_"];
             var pistes = ["A la quinta forca","A ca un penjat no hi anomenis cordes",
                 "Setze jutjes d'un jutjat mengen fetge d'un penjat"]; 
             var paraulespistes= [1, 2, 0, 2, 2, 2, 1, 0, 2];
@@ -10,7 +10,9 @@
             for (var i = 0; i < paraula.length ; i++ ) {
                 encerts[i] = '_';
             };
-            
+           var aleatori = Math.floor(Math.random() * paraules.length);
+           var paraula = paraules [aleatori];
+           var pista = pistes[paraulespistes[aleatori]];
         function Verificar(){
             var lletra = document.getElementById("lletra").value;           
             lletra = lletra.toLowerCase(); 
@@ -81,8 +83,9 @@
             } else {
                 alert("Has encertat");
                 document.getElementById("miau").play();
-                for ( pos = 0; pos < paraula.length ; pos++ ) {
+                for (var pos = 0; pos < paraula.length ; pos++ ) {
                 encerts[pos] = lletra;
+                
             }
             }
             document.getElementById("vides").innerHTML ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
