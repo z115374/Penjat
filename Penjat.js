@@ -1,9 +1,4 @@
-           const idiomes =[
-               {
-                   "Ididioma": "ca",
-                   
-               }
-           ]
+       
            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
             var vides = 7;
             var Lletres = " ";
