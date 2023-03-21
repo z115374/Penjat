@@ -1,10 +1,22 @@
-            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
+           const idiomes =[
+               {
+                   "Ididioma": "ca",
+                   
+               }
+           ]
+           var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
             var vides = 7;
             var Lletres = " ";
+            var pistes = ["A la quinta forca","A ca un penjat no hi anomenis cordes",
+                "Setze jutjes d'un jutjat mengen fetge d'un penjat"]; 
+            var paraulespistes= [1, 2, 0, 2, 2, 2, 1, 0, 2];
             var paraula = paraules[Math.floor(Math.random() * paraules.length)];
+            var encerts = [];
+            for (var i = 0; i < paraula.length ; i++ ) {
+                encerts[i] = '_';
+            };
             
         function Verificar(){
-            
             var lletra = document.getElementById("lletra").value;           
             lletra = lletra.toLowerCase(); 
             switch (lletra){
@@ -74,6 +86,9 @@
             } else {
                 alert("Has encertat");
                 document.getElementById("miau").play();
+                for ( pos = 0; pos < paraula.length ; pos++ ) {
+                encerts[pos] = lletra;
+            }
             }
             document.getElementById("vides").innerHTML ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
@@ -85,7 +100,8 @@
             document.getElementById("botodesert").disabled = true;
             document.getElementById("botofesta").disabled = true;
         }
-        function Amagar(){
+        function Inici(){
+            document.getElementById("encertades").innerHTML = encerts;
             document.getElementById("penjat0").hidden = true;
             document.getElementById("penjat1").hidden = true;
             document.getElementById("penjat2").hidden = true;
