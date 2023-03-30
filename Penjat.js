@@ -1,18 +1,19 @@
-       
-            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze"];
+            var paraules = ["fetge","forca","jutjes","jutjat","mengen","penjat","quinta","setze","cordes"];
             var vides = 7;
-            var Lletres = ["_","_","_","_","_","_","_"];
-            var pistes = ["A la quinta forca","A ca un penjat no hi anomenis cordes",
+            var Lletres = [];
+            var pistes = ["A la quinta forca!","A ca un penjat no hi anomenis cordes",
                 "Setze jutjes d'un jutjat mengen fetge d'un penjat"]; 
-            var paraulespistes= [1, 2, 0, 2, 2, 2, 1, 0, 2];
-            var paraula = paraules[Math.floor(Math.random() * paraules.length)];
-            var encerts = [];
-            for (var i = 0; i < paraula.length ; i++ ) {
-                encerts[i] = '_';
-            };
+            var paraulespistes = [2, 0, 2, 2, 2, 1, 0, 2, 1];
+            var encerts = [];          
            var aleatori = Math.floor(Math.random() * paraules.length);
-           var paraula = paraules [aleatori];
+           var paraula = paraules[aleatori];
            var pista = pistes[paraulespistes[aleatori]];
+            for (var i = 0; i < paraula.length ; i++) {
+                encerts[i] = '_';
+            };          
+        function hint(){
+           window.alert(pista);
+        }
         function Verificar(){
             var lletra = document.getElementById("lletra").value;           
             lletra = lletra.toLowerCase(); 
@@ -38,20 +39,21 @@
                     lletra = "u";
                     break;
                 }
-            var pos = paraula.indexOf(lletra);
+            var pos = paraula.indexOf(lletra);            
             if (pos === -1){
-            /*la ç hauria de ser correcta peró al tenir un nombre més alt al codi 
-            ASCII es incorrecte */  
                 alert("Has fallat!");              
                 vides = vides -1;
                 if (vides === 0){
                     document.getElementById("penjat0").hidden = false;
                     document.getElementById("penjat1").hidden = true;
                     alert("Has perdut!");
+                    document.getElementById("catfight").play();
                     AturaTot();
                     }
                 Lletres = Lletres + lletra + " ";
                 document.getElementById("lletres").innerHTML = Lletres;
+                document.getElementById("boom").play();
+                document.getElementById("clock").play();
                 switch (vides) {
                     case 6:
                         document.getElementById("penjat6").hidden = false; 
@@ -80,13 +82,21 @@
                         document.getElementById("penjat0").hidden= false;
                         document.getElementById("penjat1").hidden = true;
                 }
-            } else {
-                alert("Has encertat");
+            } else {                
+                 { alert("Has encertat");                
                 document.getElementById("miau").play();
-                for (var pos = 0; pos < paraula.length ; pos++ ) {
-                encerts[pos] = lletra;
-                
-            }
+                for (var i = 0; i < paraula.length ; i++ ) {
+                    if (paraula[i] === lletra) {
+                    encerts[i] = lletra;                     
+                    }
+                }
+                if (encerts.indexOf("_") === -1 ){
+                    alert("Has guanyat!");
+                    document.body.style.backgroundImage = "url('img/Party.png')";
+                    document.getElementById("cheer").play();
+                    AturaTot();}
+                }            
+            document.getElementById("encertades").innerHTML = encerts;
             }
             document.getElementById("vides").innerHTML ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
@@ -97,6 +107,7 @@
             document.getElementById("botocastell").disabled = true;
             document.getElementById("botodesert").disabled = true;
             document.getElementById("botofesta").disabled = true;
+            document.getElementById("botopista").disabled = true;
         }
         function Inici(){
             document.getElementById("encertades").innerHTML = encerts;
