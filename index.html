@@ -10,17 +10,19 @@
     <body onload="Inici()" style="background-image: url('img/fondo1.png'); 
           document.getElementById('mystery').play()
             background-size: 640px 480px; background-repeat: no-repeat;">
-        <h1>Prototip Joc del Penjat</h1>
+        <h1 id="versio">Versió β Joc del Penjat</h1>
         <input id="lletra" placeholder="Escriu una lletra minúscula" maxlength="1">
-        <button onclick="Verificar()" id="boto">Comprovar</button>
-        <h2>Paraula</h2>
-        <button onclick="hint()" id="botopista">Pista</button>
+        <button onclick="Verificar()" id="comprovar">Comprovar</button>
+        <h2 id="paraula">Paraula</h2>
+        <button onclick="hint()" id="pista">Pista</button>
         <div id="encertades"></div>
         <h2>Vides</h2>
         <div id="vides">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</div>
         <h2>Lletres</h2>
         <div id="lletres">_ _ _ _ _ _ _ </div>
-        <br><br><br>
+        <br>
+        <h2 id="counter">0</h2>
+        <br>
         <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat/"> El joc del penjat on Scratch <a> 
         <br>        
         <button onclick="fons()" id="botofons">Fons bàsic</button>
